@@ -1,3 +1,19 @@
+//табличные данные
+const StTrans = new Object();
+StTrans.Row     =    [0, 25, 40, 63, 100, 160, 250, 400, 630, 800, 1000, 1250, 1600, 2500];
+StTrans.Zoil10TY04 = [0, 00, 00, 00, 000, 000, 0.028, 0.018, 0.014, 000, 0.0088, 0.0075, 0.006, 0.0038];
+StTrans.Zoil25TY04 = [];
+StTrans.Zoil10YY04 = [];
+StTrans.Zoil25YY04 = [];
+StTrans.Zdry10TY04 = [0, 00, 00, 00, 000, 0.055, 0.035, 0.022, 0.014, 000, 0.009, 0000, 0.0056, 000000];
+StTrans.Zdry25TY04 = [];
+StTrans.Zdry10YY04 = [];
+StTrans.Zdry25YY04 = [];
+const CCS = [1.5, 2.5, 4, 6, 10, 16, 25, 35, 50, 70, 95, 120, 150, 185, 240];
+const rCS = [0.0123, 0.0074, 0.00413, 0.00309, 0.00184, 0.00116, 0.00074, 0.00053, 0.00037, 0.000265, 0.000195, 0.000154, 0.000124, 0.0001, 0.000077];
+const xCS = [0, 0.000104, 0.000095, 0.00009, 0.000073, 0.000068, 0.000066, 0.000064, 0.000063, 0.000061, 0.00006, 0.00006, 0.000059, 0.000059, 0.000058];
+let line = 1;
+
 $("body").on("input", ".input-range", function () {
   this.value = this.value.replace(/[^0-9\.\,]/g, "");
   isright(this);
@@ -7,8 +23,6 @@ const isright = (obj) => {
   if (obj.value > Number(obj.max)) obj.value = obj.max;
   if (obj.value < Number(obj.min)) obj.value = obj.min;
 }
-
-let line = 1;
 
 //функция замены id DOM элементов
 const swap = (i, k) => {
@@ -235,18 +249,6 @@ const DelItem = (where) => {
   line--;
 }
 
-//табличные данные
-const StTrans = new Object();
-StTrans.Row     =    [0, 25, 40, 63, 100, 160, 250, 400, 630, 800, 1000, 1250, 1600, 2500];
-StTrans.Zoil10TY04 = [0, 00, 00, 00, 000, 000, 0.028, 0.018, 0.014, 000, 0.0088, 0.0075, 0.006, 0.0038];
-StTrans.Zoil25TY04 = [];
-StTrans.Zoil10YY04 = [];
-StTrans.Zoil25YY04 = [];
-StTrans.Zdry10TY04 = [0, 00, 00, 00, 000, 0.055, 0.035, 0.022, 0.014, 000, 0.009, 0000, 0.0056, 000000];
-StTrans.Zdry25TY04 = [];
-StTrans.Zdry10YY04 = [];
-StTrans.Zdry25YY04 = [];
-
 //свободный ввод Z
 // const FreeZ = () => {
 //   calculateTrans();
@@ -371,10 +373,6 @@ const calculateTrans = () => {
   document.getElementById("outputTransI1kz").textContent = `Iкз(1) = ${Ikz1} кА`;
   document.getElementById("outputTransI3kz").textContent = `Iкз(3) = ${Ikz3} кА`;
 }
-
-const CCS = [1.5, 2.5, 4, 6, 10, 16, 25, 35, 50, 70, 95, 120, 150, 185, 240];
-const rCS = [0.0123, 0.0074, 0.00413, 0.00309, 0.00184, 0.00116, 0.00074, 0.00053, 0.00037, 0.000265, 0.000195, 0.000154, 0.000124, 0.0001, 0.000077];
-const xCS = [0, 0.000104, 0.000095, 0.00009, 0.000073, 0.000068, 0.000066, 0.000064, 0.000063, 0.000061, 0.00006, 0.00006, 0.000059, 0.000059, 0.000058];
 
 //функция расчёта КЗ линий
 const calculate = () => {
