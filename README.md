@@ -41,7 +41,7 @@
 </ul>
 
 <h3>Демонстрация работы калькулятора:</h3>
-<img src="Screenshot.png" style="wigth: 730px, height: 852px, margin: auto" href="#" />
+<img src="https://github.com/igoromashov/short-circuit/blob/master/img/Screenshot.png?raw=true" style="wigth: 528px, height: 781px, margin: auto" href="#" />
   
 <h3>Баги:</h3>
 <ul>
